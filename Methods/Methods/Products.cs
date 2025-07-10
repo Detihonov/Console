@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Methods
 {
-    internal class Program
+    internal class Products
     {
-        static void Main(string[] args)
-        {
-            Produ
-        }
-
-
     }
 }
