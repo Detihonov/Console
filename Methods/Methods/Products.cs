@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Methods
 {
-    internal class Products
+    public class Products
     {
+        private int id;
+        public int ProductID { get; set; } = 0;
+        public string ProductName { get; set; }
+        public double Tax { get; set; }
+        public double Cost { get; set; }
+        public readonly string DateOfPurchase;
+
+        public Products()
+        {
+            DateOfPurchase = System.DateTime.Now.ToLongDateString();
+        }
     }
 }
+

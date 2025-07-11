@@ -10,7 +10,8 @@ namespace Methods
     {
         static void Main(string[] args)
         {
-            Produ
+            Products products = new Products();
+            
         }
 
 
