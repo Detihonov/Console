@@ -8,17 +8,22 @@ namespace Methods
 {
     public class Products
     {
-        private int id;
-        public int ProductID { get; set; } = 0;
-        public string ProductName { get; set; }
-        public double Tax { get; set; }
-        public double Cost { get; set; }
-        public readonly string DateOfPurchase;
+        public int productID;
+        public string productName;
+        public double cost;
+        public double tax;
+        public int quantityInStock;
+        public static int totalNoProducts;
+        public const string categoryName = "Electronics";
+        public readonly string dateOfPurchase;
 
+        // Constructor
         public Products()
         {
-            DateOfPurchase = System.DateTime.Now.ToLongDateString();
+            dateOfPurchase = System.DateTime.Now.ToLongDateString();
         }
+
+        // Method
     }
 }
 
