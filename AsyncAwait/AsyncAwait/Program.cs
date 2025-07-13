@@ -12,14 +12,22 @@ namespace AsyncAwait
     {
         // Поток выполнения - наименьшая единица обработки для паралельного выполнения отдельных частей одно программы.
         // Для работы с потоками выполнения в .NET есть пространство именн System.Threading и основной его класс Thread.
+        // Синхроность - выполнение метода в контексте текущего потока.
+        // Асинхроность - выполнение методп в контексте вторичного потока.
+
+        // Асинхронное программирование – подход к написанию кода, который позволяет выполнять второстепенные и долго
+        // выполняемые задачи, не блокируя основной поток выполнения.
+
+        // Параллельное программирование – физическое выполнение нескольких операций одновременно.
+        // Достигается путем аппаратных возможностей вычислительной техники, а именно благодаря наличию нескольких ядер.
+
+        // Thread Pool – это коллекция потоков, которые могут использоваться для выполнения методов в фоновом режиме.
+
         
         static void Main(string[] args)
         {
             Thread thread = new Thread(new ParameterizedThreadStart(WriteChar));
             ThreadRead(thread);
-
-
-
         }
 
         private static void ThreadRead(Thread thread)
@@ -44,6 +52,28 @@ namespace AsyncAwait
                 Console.Write(item);
                 Thread.Sleep(70);
             }
+        }
+
+        private static void Report()
+        {
+            ThreadPool.GetMaxThreads(out int maxWorkerThreads, out int maxPortThreads);
+            ThreadPool.GetAvailableThreads(out int workerThreads, out int portThreads);
+
+            Console.WriteLine($"Рабочии потоки {workerThreads} из {maxWorkerThreads}");
+            Console.WriteLine($"IO потоки {portThreads} из {maxPortThreads}");
+            Console.WriteLine(new string('_', 80));
+        }
+
+        private static void Example1(object state)
+        {
+            Console.WriteLine($"Метод Example1 начал выполняться в потоке {Thread.CurrentThread.ManagedThreadId}");
+            Thread.Sleep(2000);
+            Console.WriteLine($"Метод Example1 закончил выполнятьяс в потоке {Thread.CurrentThread.ManagedThreadId}");
+        }
+
+        private static void Example2(object state)
+        {
+            Console.WriteLine($"");
         }
     }
 }
