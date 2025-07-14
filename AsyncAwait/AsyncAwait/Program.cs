@@ -26,8 +26,10 @@ namespace AsyncAwait
         
         static void Main(string[] args)
         {
-            Thread thread = new Thread(new ParameterizedThreadStart(WriteChar));
-            ThreadRead(thread);
+            // Thread thread = new Thread(new ParameterizedThreadStart(WriteChar));
+            // ThreadRead(thread);
+            PrintReport();
+            
         }
 
         private static void ThreadRead(Thread thread)
@@ -54,10 +56,24 @@ namespace AsyncAwait
             }
         }
 
+        private static void PrintReport()
+        {
+            Console.WriteLine($"ID потока метода Main - {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine("Для запуска нажмите любую клавишу");
+            Console.ReadKey();
+
+            Report();
+            ThreadPool.QueueUserWorkItem(new WaitCallback(Example1));
+            Report();
+            ThreadPool.QueueUserWorkItem(new WaitCallback(Example2));
+            Console.ReadKey();
+            Report();
+        }
+
         private static void Report()
         {
-            ThreadPool.GetMaxThreads(out int maxWorkerThreads, out int maxPortThreads);
-            ThreadPool.GetAvailableThreads(out int workerThreads, out int portThreads);
+            ThreadPool.GetMaxThreads(out int maxWorkerThreads, out int maxPortThreads); // Максимальное количество потоков
+            ThreadPool.GetAvailableThreads(out int workerThreads, out int portThreads); // Доступно потоков
 
             Console.WriteLine($"Рабочии потоки {workerThreads} из {maxWorkerThreads}");
             Console.WriteLine($"IO потоки {portThreads} из {maxPortThreads}");
@@ -66,14 +82,16 @@ namespace AsyncAwait
 
         private static void Example1(object state)
         {
-            Console.WriteLine($"Метод Example1 начал выполняться в потоке {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"Метод Example1 начал выполнятся в потоке {Thread.CurrentThread.ManagedThreadId}");
             Thread.Sleep(2000);
-            Console.WriteLine($"Метод Example1 закончил выполнятьяс в потоке {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"Метод Example1 закончил выполнятся в потоке {Thread.CurrentThread.ManagedThreadId}");
         }
 
         private static void Example2(object state)
         {
-            Console.WriteLine($"");
+            Console.WriteLine($"Метод Example2 начал выполнятся в потоке {Thread.CurrentThread.ManagedThreadId}");
+            Thread.Sleep(1000);
+            Console.WriteLine($"Метод Example2 закончил выполнятся в потоке {Thread.CurrentThread.ManagedThreadId}");
         }
     }
 }
