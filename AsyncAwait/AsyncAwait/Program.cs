@@ -27,12 +27,12 @@ namespace AsyncAwait
         static void Main(string[] args)
         {
             // Thread thread = new Thread(new ParameterizedThreadStart(WriteChar));
-            
+
             // ThreadRead(thread);
             // PrintReport();
             //PrintPoolWorker();
-            PrintPoolWorkerResult();
-
+            //PrintPoolWorkerResult();
+            PrintSyncFactorialCalculate();
 
 
         }
@@ -58,6 +58,19 @@ namespace AsyncAwait
             {
                 Console.Write(item);
                 Thread.Sleep(70);
+            }
+        }
+
+        private static void PrintSyncFactorialCalculate()
+        {
+            int number = 13;
+            long result = CalculateFactorial(number);
+            Console.WriteLine($"Результат - {result}");
+
+            while (true)
+            {
+                Console.Write("*");
+                Thread.Sleep(300);
             }
         }
 
@@ -158,6 +171,20 @@ namespace AsyncAwait
                 Thread.Sleep(1);
             }
             return summ;
+        }
+
+        private static long CalculateFactorial(int number)
+        {
+            Thread.Sleep(500);
+
+            if (number == 1)
+            {
+                return number;
+            }
+            else
+            {
+                return CalculateFactorial(number - 1) * number;
+            }
         }
     }
 }
