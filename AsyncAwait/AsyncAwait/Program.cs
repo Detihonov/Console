@@ -32,7 +32,7 @@ namespace AsyncAwait
             // PrintReport();
             //PrintPoolWorker();
             //PrintPoolWorkerResult();
-            PrintSyncFactorialCalculate();
+            //PrintSyncFactorialCalculate();
 
 
         }
@@ -174,6 +174,20 @@ namespace AsyncAwait
         }
 
         private static long CalculateFactorial(int number)
+        {
+            Thread.Sleep(500);
+
+            if (number == 1)
+            {
+                return number;
+            }
+            else
+            {
+                return CalculateFactorial(number - 1) * number;
+            }
+        }
+
+        private static async Task<long> CalculateFactorialAsync(int number)
         {
             Thread.Sleep(500);
 
