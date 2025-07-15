@@ -34,6 +34,11 @@ namespace Methods
             products3.cost = 36000;
             products3.quantityInStock = 800;
 
+            // Call metod CalculateTax()
+            products1.CalculateTax();
+            products2.CalculateTax();
+            products3.CalculateTax();
+
             // Get values from fields
             Console.WriteLine("Product 1: ");
             Console.WriteLine("Product ID: " + products1.productID);
@@ -41,6 +46,7 @@ namespace Methods
             Console.WriteLine("Cost: " + products1.cost);
             Console.WriteLine("Quantity in Stock: " + products1.quantityInStock);
             Console.WriteLine("Date of Purchase: " + products1.dateOfPurchase);
+            Console.WriteLine("Tax: " + products1.tax);
 
             Console.WriteLine("\nProduct 2: ");
             Console.WriteLine("Product ID: " + products2.productID);
@@ -48,6 +54,7 @@ namespace Methods
             Console.WriteLine("Cost: " + products2.cost);
             Console.WriteLine("Quantity in Stock: " + products2.quantityInStock);
             Console.WriteLine("Date of Purchase: " + products2.dateOfPurchase);
+            Console.WriteLine("Tax: " + products2.tax);
 
             Console.WriteLine("\nProduct 3: ");
             Console.WriteLine("Product ID: " + products3.productID);
@@ -55,6 +62,12 @@ namespace Methods
             Console.WriteLine("Cost: " + products3.cost);
             Console.WriteLine("Quantity in SStock: " + products3.quantityInStock);
             Console.WriteLine("Data of Purchase: " + products3.dateOfPurchase);
+            Console.WriteLine("Tax: " + products3.tax);
+
+            int totalQuantity = products1.quantityInStock + products2.quantityInStock +  products3.quantityInStock;
+            Console.WriteLine("\nTotal Quantity: " + totalQuantity);
+            Console.WriteLine("Total no. of product: " + Products.totalNoProducts); // 3
+            Console.WriteLine("Category of products: " + Products.categoryName); // Electronics
         }
 
 
