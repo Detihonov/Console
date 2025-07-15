@@ -8,8 +8,8 @@ namespace Methods
 {
     public class Products
     {
-        public int productID;
-        public string productName;
+        private int productID;
+        private string productName;
         public double cost;
         public double tax;
         public int quantityInStock;
@@ -23,7 +23,31 @@ namespace Methods
             dateOfPurchase = System.DateTime.Now.ToLongDateString();
         }
 
-        // Method
+        // Set method for Product ID
+        public void SetProductID(int value)
+        {
+            productID = value;
+        }
+
+        // Get method for Product ID
+        public int GetProductID()
+        {
+            return productID;
+        }
+
+        // Set method for ProductName
+        public void SetProductName(string value)
+        {
+            productName = value;
+        }
+
+        // Get method for ProductName
+        public string GetProductName()
+        {
+            return productName;
+        }
+
+        // Method CalculateTax
         public void CalculateTax()
         {
             double t;
