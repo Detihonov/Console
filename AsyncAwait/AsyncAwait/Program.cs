@@ -29,21 +29,8 @@ namespace AsyncAwait
             // Thread thread = new Thread(new ParameterizedThreadStart(WriteChar));
             // ThreadRead(thread);
             // PrintReport();
-            Console.WriteLine("Для запуска намжите любую клавишу");
-            Console.ReadKey();
-
-            ThreadPoolWorker threadPoolWorker = new ThreadPoolWorker(new Action<object>(StartWriter));
-            threadPoolWorker.Start('*');
-
-            for (int i = 0; i < 40; i++)
-            {
-                Console.Write('_');
-                Thread.Sleep(50);
-            }
-
-            threadPoolWorker.Wait();
-
-            Console.WriteLine($"Метод Main закончил свою работу.");
+            PrintPoolWorker();
+            
 
         }
 
@@ -69,6 +56,26 @@ namespace AsyncAwait
                 Console.Write(item);
                 Thread.Sleep(70);
             }
+        }
+
+        static void PrintPoolWorker()
+        {
+            Console.WriteLine("Для запуска намжите любую клавишу");
+            Console.ReadKey();
+
+            ThreadPoolWorker threadPoolWorker = new ThreadPoolWorker(new Action<object>(StartWriter));
+            threadPoolWorker.Start('*');
+
+            for (int i = 0; i < 40; i++)
+            {
+                Console.Write('_');
+                Thread.Sleep(50);
+            }
+
+            Console.WriteLine();
+            threadPoolWorker.Wait();
+
+            Console.WriteLine($"\nМетод Main закончил свою работу.");
         }
 
         private static void PrintReport()
