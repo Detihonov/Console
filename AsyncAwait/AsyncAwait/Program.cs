@@ -27,10 +27,13 @@ namespace AsyncAwait
         static void Main(string[] args)
         {
             // Thread thread = new Thread(new ParameterizedThreadStart(WriteChar));
+            
             // ThreadRead(thread);
             // PrintReport();
-            PrintPoolWorker();
-            
+            //PrintPoolWorker();
+            PrintPoolWorkerResult();
+
+
 
         }
 
@@ -56,6 +59,23 @@ namespace AsyncAwait
                 Console.Write(item);
                 Thread.Sleep(70);
             }
+        }
+
+        static void PrintPoolWorkerResult()
+        {
+            Console.WriteLine("Для запуска нажмите любую клавишу");
+            Console.ReadKey();
+            ThreadPoolWorkerResult<int> res = new ThreadPoolWorkerResult<int>(SumNumber); 
+            res.Start(1000);
+
+            while (res.Completed == false)
+            {
+                Console.Write("*");
+                Thread.Sleep(35);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Результат асинхронной операции = {res.Result:N}");
         }
 
         static void PrintPoolWorker()
@@ -125,6 +145,19 @@ namespace AsyncAwait
                 Console.Write(item);
                 Thread.Sleep(50);
             }
+        }
+
+        private static int SumNumber(object arg)
+        {
+            int number = (int)arg;
+            int summ = 0;
+
+            for (int i = 0; i < number; i++)
+            {
+                summ += i;
+                Thread.Sleep(1);
+            }
+            return summ;
         }
     }
 }
