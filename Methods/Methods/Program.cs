@@ -74,6 +74,21 @@ namespace Methods
             Console.WriteLine("\nTotal Quantity: " + totalQuantity);
             Console.WriteLine("Total no. of product: " + Products.GetTotalNoProducts()); // 3
             Console.WriteLine("Category of products: " + Products.GetCategoryName()); // Electronics
+
+            Students students = new Students();
+
+            // call PrintGate
+            Console.WriteLine();
+            students.PrintGrade(); // 2
+
+            // Call DoWork
+            ref int refR = ref students.DoWork();
+
+            // update the value of Ref Return
+            refR = 5;
+
+            // call PrintGate after updating the value of Ref Return
+            students.PrintGrade(); // 5
         }
 
 
