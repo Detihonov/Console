@@ -37,9 +37,10 @@ namespace Methods
             // Call metod CalculateTax()
             double cost = 36000;
             double percent = 5;
+            double percentIn = 10;
 
-            products1.CalculateTax(percent:10);
-            products2.CalculateTax(out double p);
+            products1.CalculateTax(percent:in percentIn);
+            products2.CalculateTaxOut(out double p);
             products3.CalculateTax(ref cost, ref percent);
 
             // Get values from fields

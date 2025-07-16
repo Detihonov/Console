@@ -85,7 +85,8 @@ namespace Methods
         }
 
         // Method CalculateTax
-        public void CalculateTax(double percent = 4.5)
+        // in 
+        public void CalculateTax(in double percent = 4.5)
         {
             double t;
 
@@ -109,6 +110,8 @@ namespace Methods
         // MethodName(int, string);
         // MethodName(string, int);
         // MethodName(int, string, double);
+
+        // ref
         public void CalculateTax(ref double cost, ref double percent)
         {
 
@@ -132,8 +135,9 @@ namespace Methods
         {
             return dateOfPurchase;
         }
+
         // out
-        public void CalculateTax(out double percent)
+        public void CalculateTaxOut(out double percent)
         {
             percent = 10;
             double t;
