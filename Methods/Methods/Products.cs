@@ -125,6 +125,14 @@ namespace Methods
         {
             return categoryName;
         }
+
+        // static metod CalculateTotalQuantity
+        public static int GetTotalQuantity(Products product1, Products product2, Products product3)
+        {
+            int total = 0;
+            total = product1.GetQuantityInStock() + product2.GetQuantityInStock() + product3.GetQuantityInStock();
+            return total;
+        }
     }
 }
 

@@ -64,7 +64,9 @@ namespace Methods
             Console.WriteLine("Data of Purchase: " + products3.GetDateOfPurchase());
             Console.WriteLine("Tax: " + products3.GetTax());
 
-            int totalQuantity = products1.GetQuantityInStock() + products2.GetQuantityInStock() +  products3.GetQuantityInStock();
+            // Total Quantity
+            int totalQuantity = Products.GetTotalQuantity(products1, products2, products3);
+
             Console.WriteLine("\nTotal Quantity: " + totalQuantity);
             Console.WriteLine("Total no. of product: " + Products.GetTotalNoProducts()); // 3
             Console.WriteLine("Category of products: " + Products.GetCategoryName()); // Electronics
