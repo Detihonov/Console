@@ -75,7 +75,9 @@ namespace Methods
             Console.WriteLine("Total no. of product: " + Products.GetTotalNoProducts()); // 3
             Console.WriteLine("Category of products: " + Products.GetCategoryName()); // Electronics
 
+            // New Oject Students
             Students students = new Students();
+            Students students2 = new Students();
 
             // call PrintGate
             Console.WriteLine();
@@ -89,6 +91,9 @@ namespace Methods
 
             // call PrintGate after updating the value of Ref Return
             students.PrintGrade(); // 5
+
+            // Access DisplaySubject method
+            students2.DisplaySubjects("Theory of Computation", "Computer Networks", "Discrete Mathematics", "Digital System Design", "Basic of C");
         }
 
 

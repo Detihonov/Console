@@ -22,5 +22,23 @@ namespace Methods
             // return reference of grade field
             return ref grade;
         }
+
+        // params
+        public void DisplaySubjects(params string[] str)
+        {
+            Console.WriteLine("\nDisplay Foreach: ");
+
+            foreach (string str2 in str)
+            {
+                Console.WriteLine("\t" + str2);
+            }
+
+            Console.WriteLine("\nDisplay For: ");
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                Console.WriteLine("\t" + str[i]);
+            }
+        }
     }
 }
