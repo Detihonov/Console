@@ -85,7 +85,7 @@ namespace Methods
         }
 
         // Method CalculateTax
-        public void CalculateTax()
+        public void CalculateTax(double percent = 4.5)
         {
             double t;
 
@@ -97,7 +97,32 @@ namespace Methods
             else
             {
 
-                t = cost * 12.5 / 100;
+                t = cost * percent / 100;
+            }
+            tax = t;
+        }
+
+        // Method Overloading
+        // MethodName();
+        // MethodName(int);
+        // MethodName(string);
+        // MethodName(int, string);
+        // MethodName(string, int);
+        // MethodName(int, string, double);
+        public void CalculateTax(double cost, double percent)
+        {
+
+            double t;
+
+            // Calculate tax
+            if (cost <= 50000)
+            {
+                t = cost * 5 / 100;
+            }
+            else
+            {
+
+                t = cost * percent / 100;
             }
             tax = t;
         }

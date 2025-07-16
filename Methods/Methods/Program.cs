@@ -35,9 +35,9 @@ namespace Methods
             products3.SetQuantityInStock(800);
 
             // Call metod CalculateTax()
-            products1.CalculateTax();
-            products2.CalculateTax();
-            products3.CalculateTax();
+            products1.CalculateTax(percent:9.2);
+            products2.CalculateTax(7.4);
+            products3.CalculateTax(10000,3.4);
 
             // Get values from fields
             Console.WriteLine("Product 1: ");
