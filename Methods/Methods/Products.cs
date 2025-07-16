@@ -10,17 +10,18 @@ namespace Methods
     {
         private int productID;
         private string productName;
-        public double cost;
-        public double tax;
-        public int quantityInStock;
-        public static int totalNoProducts;
-        public const string categoryName = "Electronics";
-        public readonly string dateOfPurchase;
+        private double cost;
+        private double tax;
+        private int quantityInStock;
+        private static int totalNoProducts;
+        private const string categoryName = "Electronics";
+        private readonly string dateOfPurchase;
 
         // Constructor
         public Products()
         {
             dateOfPurchase = System.DateTime.Now.ToLongDateString();
+
         }
 
         // Set method for Product ID
@@ -47,6 +48,42 @@ namespace Methods
             return productName;
         }
 
+        // Set method for Cost
+        public void SetCost(double value)
+        {
+            cost = value;
+        }
+
+        // Get method for Cost
+        public double GetCost()
+        {
+            return cost;
+        }
+
+        // Set method for Tax
+        public void SetTax(double value)
+        {
+            tax = value;
+        }
+
+        // Get method for Tax
+        public double GetTax()
+        {
+            return tax;
+        }
+
+        // Set method for quantityInStock
+        public void SetQuantityInStock(int value)
+        {
+            quantityInStock = value;
+        }
+
+        // Get method for quantityInStock
+        public int GetQuantityInStock()
+        {
+            return quantityInStock;
+        }
+
         // Method CalculateTax
         public void CalculateTax()
         {
@@ -63,6 +100,30 @@ namespace Methods
                 t = cost * 12.5 / 100;
             }
             tax = t;
+        }
+
+        // Get method for dateOfPurchase
+        public string GetDateOfPurchase()
+        {
+            return dateOfPurchase;
+        }
+
+        // Set metod for TotalNoProducts
+        public static void SetTotalNoProducts(int value)
+        {
+            totalNoProducts = value;
+        }
+
+        // Get metod for TotalNoProducts
+        public static int GetTotalNoProducts()
+        {
+            return totalNoProducts;
+        }
+
+        // Get metod static for categoryName
+        public static string GetCategoryName()
+        {
+            return categoryName;
         }
     }
 }
