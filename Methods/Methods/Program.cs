@@ -21,7 +21,7 @@ namespace Methods
             // Initalize fields
             products1.SetProductID(1001);
             products1.SetProductName("Mobile");
-            products1.SetCost(20000);
+            products1.SetCost(50000);
             products1.SetQuantityInStock(1200);
 
             products2.SetProductID(1002);
@@ -35,9 +35,12 @@ namespace Methods
             products3.SetQuantityInStock(800);
 
             // Call metod CalculateTax()
-            products1.CalculateTax(percent:9.2);
-            products2.CalculateTax(7.4);
-            products3.CalculateTax(10000,3.4);
+            double cost = 36000;
+            double percent = 5;
+
+            products1.CalculateTax(percent:10);
+            products2.CalculateTax(out double p);
+            products3.CalculateTax(ref cost, ref percent);
 
             // Get values from fields
             Console.WriteLine("Product 1: ");

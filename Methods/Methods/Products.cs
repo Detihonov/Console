@@ -109,7 +109,7 @@ namespace Methods
         // MethodName(int, string);
         // MethodName(string, int);
         // MethodName(int, string, double);
-        public void CalculateTax(double cost, double percent)
+        public void CalculateTax(ref double cost, ref double percent)
         {
 
             double t;
@@ -131,6 +131,24 @@ namespace Methods
         public string GetDateOfPurchase()
         {
             return dateOfPurchase;
+        }
+        // out
+        public void CalculateTax(out double percent)
+        {
+            percent = 10;
+            double t;
+
+            // Calculate tax
+            if (cost <= 20000)
+            {
+                t = cost * 10 / 100;
+            }
+            else
+            {
+
+                t = cost * percent / 100;
+            }
+            tax = t;
         }
 
         // Set metod for TotalNoProducts
