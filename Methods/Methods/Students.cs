@@ -40,5 +40,24 @@ namespace Methods
                 Console.WriteLine("\t" + str[i]);
             }
         }
+
+        // Metod DisplayMarks
+        public void DisplayMarks(int marks1, int marks2, int marks3)
+        {
+            double avg = getAverageMarks();
+
+            Console.WriteLine("\nShowing ratings: ");
+            Console.WriteLine("\tMarks 1: " + marks1);
+            Console.WriteLine("\tMarks 2: " + marks2);
+            Console.WriteLine("\tMarks 3: " + marks3);
+            Console.WriteLine("\tAverage marks: " + avg);
+
+            // create local function
+            double getAverageMarks()
+            {
+                double average = (double)(marks1 + marks2 + marks3) / 3;
+                return average;
+            }
+        }
     }
 }

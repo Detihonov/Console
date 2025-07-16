@@ -94,6 +94,7 @@ namespace Methods
 
             // Access DisplaySubject method
             students2.DisplaySubjects("Theory of Computation", "Computer Networks", "Discrete Mathematics", "Digital System Design", "Basic of C");
+            students2.DisplayMarks(80,45,71);
         }
 
 
