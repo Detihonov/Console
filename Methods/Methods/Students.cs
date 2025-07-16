@@ -51,12 +51,18 @@ namespace Methods
             Console.WriteLine("\tMarks 2: " + marks2);
             Console.WriteLine("\tMarks 3: " + marks3);
             Console.WriteLine("\tAverage marks: " + avg);
+            Console.WriteLine("\nStatic func: " + "\n\t" + getLocalExample());
 
             // create local function
             double getAverageMarks()
             {
                 double average = (double)(marks1 + marks2 + marks3) / 3;
                 return average;
+            }
+
+            static string getLocalExample()
+            {
+                return "Hello Static Local Function";
             }
         }
     }
