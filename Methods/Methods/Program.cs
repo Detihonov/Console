@@ -95,6 +95,18 @@ namespace Methods
             // Access DisplaySubject method
             students2.DisplaySubjects("Theory of Computation", "Computer Networks", "Discrete Mathematics", "Digital System Design", "Basic of C");
             students2.DisplayMarks(80,45,71);
+
+            // read number from keyboard
+            Console.Write("\nEnter a numer: ");
+            int input = int.Parse(Console.ReadLine());
+
+            // create object
+            Sample sample = new Sample();
+
+            // call Factorial metod
+            double fact = sample.Factorial(input);
+            Console.WriteLine("Factorial: " + fact);
+            Console.ReadKey();
         }
 
 
