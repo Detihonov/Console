@@ -33,6 +33,9 @@ namespace PropertiesIndexers
             example3.Tax = 15;
             example3.NativePlace = "New York";
 
+            // create car object
+            Car car = new Car();
+
             // display fields
             Console.WriteLine(Example.CompanyName);
             Console.WriteLine("\nFirst Example: ");
@@ -59,6 +62,15 @@ namespace PropertiesIndexers
             Console.WriteLine(example3.Salary);
             Console.WriteLine(example3.NativePlace);
             Console.WriteLine();
+
+            //Object Car
+            car[0] = "Nissan";
+
+            // Display Car
+            Console.WriteLine("First Car: ");
+            Console.WriteLine(car[0]); // Nissan 
+            Console.WriteLine(car["second"]);
+            Console.WriteLine(car[2]);
         }
     }
 }
