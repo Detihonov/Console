@@ -107,6 +107,9 @@ namespace Methods
             double fact = sample.Factorial(input);
             Console.WriteLine("Factorial: " + fact);
             Console.ReadKey();
+
+            Sample sample22 = new Sample();
+            sample22.CardinalToOrdinal();
         }
 
 

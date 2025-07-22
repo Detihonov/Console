@@ -19,5 +19,19 @@ namespace Methods
                 return number * Factorial(number - 1);
             }
         }
+
+        /// <summary>
+        /// Передайте 32-битное целое число, и оно будет преобразовано
+        ///  в его порядковый эквивалент.
+        /// </summary>
+        ///  <param name="number">Number is a cardinal value e.g. 1, 2, 3 and so on.</param>
+        ///  <returns>Number as an ordinal value e.g. 1st, 2nd, 3rd and so on.</returns>
+        public void CardinalToOrdinal()
+        {
+            for (int number = 1; number < 10; number++)
+            {
+                Console.WriteLine($"CardinalToOrdinal {number}");
+            }
+        }
     }
 }
