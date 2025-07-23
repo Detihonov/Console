@@ -18,10 +18,16 @@ namespace Inheritance
 			set { _region = value; }
 		}
 
-		// Metod
-		public long GetSalesOfTheCurrentMomth()
+        // constructor of child class
+        public Seller(int id, string name, string location, string region):base(id, name, location)
+        {
+            _region = region;
+        }
+
+        // Metod GetSalesOfTheCurrentMomth
+        public long GetSalesOfTheCurrentMomth()
 		{
-			return 1_000;	
+			return 1_000;
 		}
 
 	}

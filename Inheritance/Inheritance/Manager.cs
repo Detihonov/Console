@@ -18,6 +18,12 @@
             }
         }
 
+        // constructor of child class
+        public Manager(int id, string name, string location, string deportmentName): base(id, name, location)
+        {
+            _deportmentName = deportmentName;
+        }
+
         // method GetTotalSalesOfTheYear
         public long GetTotalSalesOfTheYear()
         {
@@ -27,7 +33,7 @@
         // metod GetFullDepartmentName + key base
         public string GetFullDepartmentName()
         {
-            return DeportamentName + " at " + base._location; 
+            return DeportamentName + " at " + base._location;
         }
     }
 }

@@ -11,10 +11,7 @@ namespace Inheritance
         static void Main(string[] args)
         {
             // create object of Employee
-            Employee employee = new Employee();
-            employee.Id = 1;
-            employee.Name = "Scott";
-            employee.Location = "Hyderbad";
+            Employee employee = new Employee(1,"Scott", "Hyderbad");
 
             Console.WriteLine("Object of Parent class (Employee): ");
             Console.WriteLine(employee.Id);
@@ -23,11 +20,7 @@ namespace Inheritance
             Console.WriteLine();
 
             // create object of Manager
-            Manager manager = new Manager();
-            manager.Id = 2;
-            manager.Name = "Denis";
-            manager.Location = "Moscow";
-            manager.DeportamentName = "Accounting";
+            Manager manager = new Manager(2,"Denis","Moskow", "Accounting");
 
             Console.WriteLine("Object of Child class (Manager): ");
             Console.WriteLine(manager.Id);
@@ -39,11 +32,7 @@ namespace Inheritance
             Console.WriteLine();
 
             // create object of Seller
-            Seller seller = new Seller();
-            seller.Id = 3;
-            seller.Name = "Allen";
-            seller.Location = "Washington";
-            seller.Region = "East";
+            Seller seller = new Seller(3,"Alien", "Washington", "East");
 
             Console.WriteLine("Object of Child class (Seller): ");
             Console.WriteLine(seller.Id);
