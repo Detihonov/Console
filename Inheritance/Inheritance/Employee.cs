@@ -19,5 +19,27 @@
             _name = name;
             _location = location;
         }
+
+        // Method GetHealthInsuranceAmount
+        public string GetHealthInsuranceAmount()
+        {
+            return "Health Insurance amount is: " + 500;
+        }
+
+        public void MethodNameOne()
+        {
+           
+        }
+
+        // virtual metod MethodName
+        public virtual string MethodName()
+        {
+            return "Health Insurance premium amount is: " + 500;
+        }
+
+        public virtual void MethodNameTwo()
+        {
+
+        }
     }
 }

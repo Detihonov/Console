@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Inheritance
+﻿namespace Inheritance
 {
-    public class Seller:Employee
+	// sealed 
+    public sealed class Seller:Employee
     {
 		// field
 		private string _region;
@@ -30,5 +25,10 @@ namespace Inheritance
 			return 1_000;
 		}
 
-	}
+        public sealed override string MethodName()
+        {
+            return "Health Insurance premium amount is: " + 500;
+        }
+
+    }
 }

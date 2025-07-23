@@ -1,6 +1,7 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,6 +30,8 @@ namespace Inheritance
             Console.WriteLine(manager.DeportamentName);
             Console.WriteLine(manager.GetTotalSalesOfTheYear());
             Console.WriteLine(manager.GetFullDepartmentName());
+            Console.WriteLine(manager.GetHealthInsuranceAmount());
+            Console.WriteLine(manager.MethodName());
             Console.WriteLine();
 
             // create object of Seller
