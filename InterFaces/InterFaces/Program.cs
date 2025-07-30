@@ -10,20 +10,20 @@ namespace InterFaces
     {
         static void Main(string[] args)
         {
-            Manager manager = new Manager(1,"Alien","New York","Accounting");
-            Console.WriteLine(manager.Id);
-            Console.WriteLine(manager.Name);
-            Console.WriteLine(manager.Location);
-            Console.WriteLine(manager.Department);
-            Console.WriteLine(manager.GetHealthInsuranceAmount());
+            IEmployee emp;
+            emp = new Manager(1,"Alien","New York","Accounting");
+            //Console.WriteLine(emp.Id);
+            //Console.WriteLine(emp.Name);
+            //Console.WriteLine(emp.Location);
+            Console.WriteLine(emp.GetHealthInsuranceAmount());
             Console.WriteLine();
 
-            SalesMan sales = new SalesMan(2,"John","Washiington","East");
-            Console.WriteLine(sales.Id);
-            Console.WriteLine(sales.Name);
-            Console.WriteLine(sales.Location);
-            Console.WriteLine(sales.Region);
-            Console.WriteLine(sales.GetHealthInsuranceAmount());
+            emp = new SalesMan(2,"John","Washiington","East");
+            //Console.WriteLine(sales.Id);
+            //Console.WriteLine(sales.Name);
+            //Console.WriteLine(sales.Location);
+            //Console.WriteLine(sales.Region);
+            Console.WriteLine(emp.GetHealthInsuranceAmount());
 
         }
     }
