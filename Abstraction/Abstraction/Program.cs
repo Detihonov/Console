@@ -10,21 +10,17 @@ namespace Abstraction
     {
         static void Main(string[] args)
         {
-            Manager manager = new Manager(1,"Denis","Russia", "Developer");
-            SalesMan sales = new SalesMan(2,"Michal","New York","Manager");
+            // abstract class
+            Employee employee;
 
-            Console.WriteLine(manager.Id);
-            Console.WriteLine(manager.Name);
-            Console.WriteLine(manager.Location);
-            Console.WriteLine(manager.Department);
-            Console.WriteLine(manager.GetHealthInsuranceAmount());
+            // One child class
+            employee = new Manager(1, "Denis", "Russia", "Developer");
+            Console.WriteLine(employee.GetHealthInsuranceAmount());
             Console.WriteLine();
 
-            Console.WriteLine(sales.Id);
-            Console.WriteLine(sales.Name);
-            Console.WriteLine(sales.Location);
-            Console.WriteLine(sales.Region);
-            Console.WriteLine(sales.GetHealthInsuranceAmount());
+            // Two chilld class
+            employee = new SalesMan(2,"Michal","New York","Manager");
+            Console.WriteLine(employee.GetHealthInsuranceAmount());
 
         }
     }
