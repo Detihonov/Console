@@ -14,6 +14,11 @@ namespace InheritanceMultiple
             person = new Manager(1,"Alien","New York","Account",Convert.ToDateTime("13-06-1985"));
             Console.WriteLine();
             Console.WriteLine(person.GetAge());
+
+            IEmployee emp;
+            emp = new Manager(1, "Alien", "New York", "Account", Convert.ToDateTime("13-06-1985"));
+            Console.WriteLine();
+            Console.WriteLine(emp.GetAge());
         }
     }
 }

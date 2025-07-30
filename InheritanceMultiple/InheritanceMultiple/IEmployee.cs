@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace InheritanceMultiple
 {
-    interface IEmployee: IPerson
+    interface IEmployee
     {
+        // auto-properties
+        int Id { get; set; }
+        string Name { get; set; }
+        string Location {  get; set; }
 
+        // method abstract
+        string GetHealthInsuranceAmount();
+        int GetAge();
     }
 }

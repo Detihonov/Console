@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InheritanceMultiple
 {
-    public class Manager : IPerson
+    public class Manager : IEmployee, IPerson
     {
         // field
         private int _id;
@@ -21,6 +21,9 @@ namespace InheritanceMultiple
         public string Location { get => _location; set => _location = value; }
         public string Department { get => _department; set => _department = value; }
         public DateTime DateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
+        int IEmployee.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        string IEmployee.Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        string IEmployee.Location { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Manager(int id, string name, string location, string department, DateTime dateOfBirth)
         {
@@ -41,10 +44,22 @@ namespace InheritanceMultiple
             return Department + " at " + _location;
         }
 
-        public int GetAge()
+        // method for IPerson.GetAge method
+        int IPerson.GetAge()
         {
             int age = Convert.ToInt32((DateTime.Now - DateOfBirth).TotalDays / 365);
             return age;
+        }
+
+        string IEmployee.GetHealthInsuranceAmount()
+        {
+            throw new NotImplementedException();
+        }
+
+        // method for IEmployee.GetAge method
+        int IEmployee.GetAge()
+        {
+            return 20;
         }
     }
 }
