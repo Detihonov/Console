@@ -8,9 +8,9 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        // delegate ВозвращаемыйТип ИмяДелегата(Параметры);
-        delegate void Message(); // Объявляем делегат
-        delegate void MyDelegate(string message);  // Делегат для метода, принимающего string и ничего не возвращающего
+        delegate void Message();
+        delegate int Operation(int a, int b);
+        delegate void MyDelegate(string message);
         delegate void PrintMessage(string msg);
         delegate void MultiDelegate();
         delegate int MathOperation(int a, int b);
@@ -19,6 +19,12 @@ namespace ConsoleApp1
         // Action<T>: Не возвращает значение(void). Пример: Action<string> act = s => Console.WriteLine(s);
         // Func<T, TResult>: Возвращает значение.Пример: Func<int, int> square = x => x * x;
         // Predicate<T>: Возвращает bool (для фильтров). Пример: Predicate<int> isEven = x => x % 2 == 0;
+        static void SayHello(string name) => Console.WriteLine($"Hello, {name}!");
+        static void Method1() => Console.WriteLine("Method 1");
+        static void Method2() => Console.WriteLine("Method 2");
+        static int Add(int x, int y) => x + y;
+        static int Multiply(int x, int y) => x * y;
+        static void Example(Operation operation) => Console.WriteLine("Вывод: " + operation(2,2));
         static void Main(string[] args)
         {
             // // Присваиваем этой переменной адрес метода
@@ -53,17 +59,33 @@ namespace ConsoleApp1
             multi(); // Вывод: Method 1 и Method 2
             multi -= Method1; // // Удаляем первый
             multi(); // Выводим Metod 2
+
+            Console.ReadKey();
+            Console.Clear();
+            SwitchDelegate();
+            
         }
 
-        static void SayHello(string name)
+        static void SwitchDelegate()
         {
-            Console.WriteLine($"Hello, {name}!");
-        }
+            Console.WriteLine("Введите число: ");
+            int c = Convert.ToInt32(Console.ReadLine());
+            Operation operation = null;
+            switch (c)
+            {
+                case 1:
+                    operation = Add;
+                    break;
+                case 2:
+                    operation = Multiply;
+                    break;
+                default:
+                    Console.WriteLine("Не правильное число");
+                    break;
+            }
 
-        static void Method1() { Console.WriteLine("Method 1"); }
-        static void Method2() { Console.WriteLine("Method 2"); }
-        static int Add(int x, int y) { return x + y; }
-        static int Multiply(int x, int y) { return x * y; }
+            Example(operation);
+        }
     }
 
     class Hello
