@@ -71,7 +71,7 @@ namespace ConsoleApp1
             FuncPrint();
             DelegateAll();
             MetodAllPrint();
-            CalculatorDel();
+            
 
             Console.ReadKey();
             Console.Clear();
