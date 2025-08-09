@@ -71,12 +71,57 @@ namespace ConsoleApp1
             FuncPrint();
             DelegateAll();
             MetodAllPrint();
-            
+            GetInvocationLists();
+            Temperature();
+
 
             Console.ReadKey();
             Console.Clear();
             SwitchDelegate();
             
+        }
+
+        static void Temperature()
+        {
+            Console.WriteLine("\nTemperature °C: ");
+
+            // использование
+            var monitor = new TemperatureMonitor();
+
+            // подписка на событие Action
+            monitor.TemperatureWarning += message => Console.WriteLine(message);
+
+            // подписка на событие Func
+            monitor.TemperatureFormater += temp => $"{temp}°C";
+
+            // проверка температуры
+            monitor.CheckTemperature(25);
+            monitor.CheckTemperature(35);
+        }
+
+        static void GetInvocationLists()
+        {
+            Console.WriteLine("\nGetInvocationLists: ");
+
+            Calculator calc = new Calculator();
+            CalcDelegate delAll = calc.Add;
+            delAll += Calculator.Sub;
+            delAll += calc.Mult;
+            delAll += calc.Div;
+
+            foreach (CalcDelegate i in delAll.GetInvocationList())
+            {
+                // массив делегатов
+                try
+                {
+                    Console.WriteLine($"Result: {i(5.7, 3.2)}");
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
         static void CalculatorDel()
