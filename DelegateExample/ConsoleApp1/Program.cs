@@ -25,6 +25,7 @@ namespace ConsoleApp1
         delegate void MultiDelegate();
         delegate int MathOperation(int a, int b);
         delegate double CalcDelegate(double x, double y);
+        delegate T AddDelegate<T>(T x, T y);
 
         // .NET предоставляет готовые делегаты для удобства:
         Action<string> act = s => Console.WriteLine(s);
@@ -36,7 +37,7 @@ namespace ConsoleApp1
         static int Add(int x, int y) => x + y;
         static int Multiply(int x, int y) => x * y;
         static int Sqrt(int a, int b) => a * a + b * b;
-        static void Example(Operation operation) => Console.WriteLine("Вывод: " + operation(2,2));
+        static void ExamplePrint(Operation operation) => Console.WriteLine("Вывод: " + operation(2,2));
         static void Great() => Console.WriteLine("Привет");
         static void ShowDate() => Console.WriteLine(DateTime.Now.ToShortDateString());
         static void Bye() => Console.WriteLine("Пока");
@@ -63,22 +64,28 @@ namespace ConsoleApp1
             message1(); 
             message2();
 
-            MultiDelegates();
-            LogerPrint();
-            ActionPrint();
-            DelrgateMain();
-            PredicatePrint();
-            FuncPrint();
-            DelegateAll();
-            MetodAllPrint();
-            GetInvocationLists();
             Temperature();
+            ExampleGeneric();
 
 
             Console.ReadKey();
             Console.Clear();
             SwitchDelegate();
             
+        }
+
+        static void ExampleGeneric()
+        {
+            Example example = new Example();
+            AddDelegate<int> delInt = example.AddInt;
+            Console.WriteLine($"\nThe sum of integers: {delInt(8,6)}");
+
+            AddDelegate<double> deldouble = example.AddDouble;
+            Console.WriteLine($"The sum of real numers: {deldouble(45.67, 62.81)}");
+
+            AddDelegate<char> delChar = Example.AddChar;
+            Console.WriteLine($"The sum characters: {delChar('S', 'h')}");
+            Console.WriteLine($"The sum characters: {delChar('S', 'y')}");
         }
 
         static void Temperature()
@@ -194,7 +201,7 @@ namespace ConsoleApp1
                     break;
             }
 
-            Example(operation);
+            ExamplePrint(operation);
         }
 
         static void PredicatePrint()
