@@ -12,5 +12,10 @@ namespace ConsoleApp1
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+
+        public override string ToString()
+        {
+            return $"Surname: {LastName}, Name: {FirstName}, Born: {BirthDate.ToLongDateString()}";
+        }
     }
 }
