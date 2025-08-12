@@ -388,27 +388,7 @@ namespace ConsoleApp1
 
         }
 
-        static void DelegateAll()
-        {
-            // Пример использования всех трёх делегатов вместе
-            List<int> numbers = new List<int>() { 1,2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-            // Predicate для фильтрации
-            Predicate<int> isEven = x => x % 2 == 0;
-
-            // Func для преобразования (умножение)
-            Func<int, int, int> multy = (x, y) => x * y;
-
-            // Action для вывода результата
-            Action<string> print = message => Console.WriteLine(message);
-
-            // Использование
-            var evenNumbers = numbers.FindAll(isEven);
-            print($"Чётные числа: {string.Join(", ",evenNumbers)}");
-
-            List<int> multypled = evenNumbers.Select(x => multy(x, 2)).ToList();
-            print("Умножение на 2: " + string.Join(", ",multypled));
-        }
+       
 
         static void MetodAllPrint()
         {
@@ -514,14 +494,5 @@ namespace ConsoleApp1
 
             del("Маша");
         }
-    }
-
-    class Hello
-    {
-        public void Display() => Console.WriteLine("Привет");
-    }
-    class Welcome
-    {
-        public static void Print() => Console.WriteLine("Welcome");
     }
 }
