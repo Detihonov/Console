@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         public event Action<string> TemperatureWarning;
         public event Func<int, string> TemperatureFormater;
-        private event Action<string> TemperatureError;
+        // private event Action<string> TemperatureError;
 
         public void CheckTemperature(int temp)
         {

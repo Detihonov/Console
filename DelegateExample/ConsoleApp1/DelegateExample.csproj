@@ -49,7 +49,10 @@
     <Compile Include="Hello.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stats.cs" />
+    <Compile Include="StockMonitor.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="Temperature.cs" />
     <Compile Include="TemperatureMonitor.cs" />
     <Compile Include="Welcome.cs" />
   </ItemGroup>
