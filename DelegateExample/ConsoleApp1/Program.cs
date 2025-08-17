@@ -18,7 +18,10 @@ namespace ConsoleApp1
 
         delegate void Message();
         delegate void Loger();
+        public delegate void MyDelegate();
+        public event MyDelegate MyEvent;
         delegate int MathOperation(int a, int b);
+        private static Stats stats = new Stats();
 
         // .NET предоставляет готовые делегаты для удобства:
         Action<string> act = s => Console.WriteLine(s);
@@ -62,10 +65,15 @@ namespace ConsoleApp1
             Student.StudentList();
             npPrm();
 
+            // Stats
+            stats.ReturnStats(stats.Display);
+
             // Monitor Bank
             StockMonitor st = new StockMonitor();
             st.PriceChangeHandler = st.ShowPrice;
             st.Start();
+
+
 
             Console.ReadKey();
             Console.Clear();
