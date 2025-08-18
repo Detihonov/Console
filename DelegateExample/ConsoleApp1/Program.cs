@@ -68,16 +68,14 @@ namespace ConsoleApp1
             // Stats
             stats.ReturnStats(stats.Display);
 
+            // Person
+            Person person = new Person();
+            person.Print();
+
             // Monitor Bank
             StockMonitor st = new StockMonitor();
             st.PriceChangeHandler = st.ShowPrice;
             st.Start();
-
-
-
-            Console.ReadKey();
-            Console.Clear();
-            Example.SwitchDelegate();
         }
 
 
