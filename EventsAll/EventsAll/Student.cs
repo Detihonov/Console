@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace EventsAll
 {
+    public delegate void ExamDelegate(string t);
     public class Student
     {
         public string FirstName { get; set; }
