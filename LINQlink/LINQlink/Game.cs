@@ -121,6 +121,23 @@ namespace LINQlink
             {
                 Console.WriteLine(game.Title);
             }
+
+            // LIST Example SqlSyntax
+            PrintSqlSyntax(games);
+        }
+        public void PrintSqlSyntax(List<Game> games)
+        {
+            Console.WriteLine("\nLINQ Syntax SQL: ");
+            var adventure = games.Where(x => x.Genre == "Adventure");
+
+            var adventureGamesQuery = from game in games 
+                                      where game.Genre == "Adventure" 
+                                      select game;
+
+            foreach (var game in adventureGamesQuery)
+            {
+                Console.WriteLine(game.Title);
+            }
         }
     }
 }
