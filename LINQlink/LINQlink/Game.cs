@@ -138,6 +138,20 @@ namespace LINQlink
             {
                 Console.WriteLine(game.Title);
             }
+
+            var cheapestGame = games.OrderBy(y => y.Price).First();
+            Console.WriteLine($"{cheapestGame.Title} - {cheapestGame.Price} - {cheapestGame.Rating}");
+
+            // DISTINCT
+            var genres = games.Select(x => x.Genre).Distinct();
+            Console.WriteLine("\nDISTINCT: ");
+
+            foreach (var item in genres)
+            {
+                Console.WriteLine(item);
+            }
+
+
         }
     }
 }
