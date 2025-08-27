@@ -72,6 +72,15 @@ namespace ConsoleApp1
             Person person = new Person();
             person.Print();
 
+            // Student
+            Student student = new Student();
+            student.PredicatePrintList();
+            Console.WriteLine();
+
+            // Student Sort
+            Student stsort = new Student();
+            stsort.SortPrint();
+
             // Monitor Bank
             StockMonitor st = new StockMonitor();
             st.PriceChangeHandler = st.ShowPrice;
